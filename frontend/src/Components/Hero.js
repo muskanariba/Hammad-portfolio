@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 function Hero() {
   const resumeUrl = '/Hammad Saeed Resume.pdf';
   const linkedinUrl = 'https://www.linkedin.com/in/pm-hammad-saeed?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app';
-  const githubUrl = 'https://github.com/yourgithub';
+
 
   return (
     <section
@@ -60,14 +60,7 @@ function Hero() {
               <FaLinkedin size={24} />
             </a>
 
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white text-[#162c6b] shadow-lg hover:bg-[#162c6b] hover:text-white transition duration-300"
-            >
-              <FaGithub size={24} />
-            </a>
+         
           </div>
         </div>
       </div>

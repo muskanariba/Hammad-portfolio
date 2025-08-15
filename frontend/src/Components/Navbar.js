@@ -13,9 +13,9 @@ function Navbar() {
   return (
     <nav className="bg-gray-100 sticky top-0 z-50 shadow-md font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between h-16 items-center">
           
-          {/* Logo with handwriting font - only 'H' bigger */}
+          {/* Logo */}
           <div
             className="flex-shrink-0 tracking-wide"
             style={{
@@ -28,13 +28,13 @@ function Navbar() {
             <span style={{ fontSize: '2.3rem' }}>H</span>ammad Saeed
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => (
+          {/* Desktop Menu - smaller size */}
+          <div className="hidden md:flex space-x-6">
+            {['Home', 'About', 'Experience', 'Skills', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-black text-lg md:text-xl transition px-3 py-2 border-b-4 border-transparent hover:border-b-4 hover:border-[#162c6b]"
+                className="text-black text-base md:text-lg transition px-2 py-1 border-b-4 border-transparent hover:border-b-4 hover:border-[#162c6b]"
               >
                 {item}
               </a>
@@ -78,13 +78,13 @@ function Navbar() {
         </div>
       </div>
 
-   
+      {/* Mobile Menu */}
       {isOpen && (
         <div
           className="md:hidden bg-white px-2 pt-2 pb-3 space-y-1 border-t"
           style={{ borderColor: mainBlue }}
         >
-          {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => (
+          {['Home', 'About', 'Experience', 'Skills', 'Contact'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

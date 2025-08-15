@@ -4,8 +4,10 @@ import Hero from './Components/Hero';
 import Education from './Components/Education';
 import About from './Components/About';
 import WorkExperience from './Components/WorkExperience';
-import Interests from './Components/Interests';
-import Skills from './Components/Skills'
+import Footer from './Components/Footer';
+import Skills from './Components/Skills';
+import Extras from './Components/Extras';
+import Contact from './Components/Contact';
 function App() {
   return (
     <>
@@ -13,8 +15,12 @@ function App() {
        <Hero />
        <About/>
        <Education/>
+       <Skills/>
        <WorkExperience/>
-             <Skills/>
+       <Extras/>
+       <Contact/>
+       <Footer/>
+         
    
     </>
   );
