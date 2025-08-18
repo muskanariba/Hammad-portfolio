@@ -76,25 +76,28 @@ export default function WorkExperience() {
   return (
     <section
       id="experience"
-      className="bg-gray-100 py-20 px-4 w-full overflow-hidden"
+      className="bg-gray-100 py-12 sm:py-14 md:py-16 lg:py-20 px-4 w-full overflow-hidden"
     >
-      <div className="text-center mb-10">
+      <div className="text-center mb-8 md:mb-10">
+        {/* ✅ Responsive Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl md:text-5xl font-bold mb-4 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-snug"
         >
           <span className="text-black">My</span>{" "}
           <span className="text-[#162c6b]">Work Experience</span>
         </motion.h2>
-        <p className="text-[#162c6b] mt-1 text-sm md:text-lg">
+
+        {/* ✅ Smaller, responsive sub-text */}
+        <p className="text-[#162c6b] mt-1 text-sm sm:text-base md:text-lg">
           My professional journey in design & project management
         </p>
       </div>
 
       <div className="relative">
-        {/* Vertical timeline line */}
+        {/* Timeline line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#162c6b] h-full"></div>
 
         {experiences.map((exp, idx) => {
@@ -106,16 +109,16 @@ export default function WorkExperience() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="mb-2 flex flex-col md:flex-row items-center relative"
+              className="mb-4 flex flex-col md:flex-row items-center relative"
             >
-              {/* Timeline icon */}
+              {/* Timeline dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-9 h-9 rounded-full bg-[#162c6b] text-white flex items-center justify-center z-10 shadow-md text-sm">
                 {exp.icon}
               </div>
 
               {/* Experience card */}
               <div
-                className={`relative bg-white rounded-lg shadow-md p-4 w-full md:w-[42%] border border-gray-100 mt-3 md:mt-0
+                className={`relative bg-white rounded-lg shadow-md p-4 sm:p-5 w-full md:w-[42%] border border-gray-100 mt-4 md:mt-0
                   transition-transform hover:scale-[1.015] hover:shadow-lg duration-200
                   ${isLeft ? "md:mr-auto" : "md:ml-auto"}`}
               >
@@ -130,14 +133,16 @@ export default function WorkExperience() {
                 ></div>
 
                 <div className="flex justify-between items-start flex-wrap gap-2">
-                  <h3 className="text-sm font-semibold text-black flex items-center gap-2">
+                  <h3 className="text-sm sm:text-base font-semibold text-black flex items-center gap-2">
                     {exp.icon}
                     {exp.title}
                   </h3>
-                  <span className="text-xs text-gray-500">{exp.period}</span>
+                  <span className="text-xs sm:text-sm text-gray-500">
+                    {exp.period}
+                  </span>
                 </div>
 
-                <p className="font-medium text-xs text-[#162c6b] mt-0.5">
+                <p className="font-medium text-xs sm:text-sm text-[#162c6b] mt-0.5">
                   {exp.website ? (
                     <a
                       href={exp.website}
@@ -151,10 +156,12 @@ export default function WorkExperience() {
                     exp.company
                   )}
                 </p>
-                <p className="text-gray-600 text-[11px]">{exp.location}</p>
+                <p className="text-gray-600 text-[11px] sm:text-xs">
+                  {exp.location}
+                </p>
 
                 {exp.portfolio && (
-                  <p className="mt-1 text-[11px]">
+                  <p className="mt-1 text-[11px] sm:text-xs">
                     Portfolio:{" "}
                     <a
                       href={exp.portfolio}
@@ -168,7 +175,7 @@ export default function WorkExperience() {
                 )}
 
                 {exp.links && (
-                  <ul className="list-disc list-inside space-y-0.5 text-[11px] mt-2">
+                  <ul className="list-disc list-inside space-y-0.5 text-[11px] sm:text-xs mt-2">
                     {exp.links.map((link, i) => (
                       <li key={i}>
                         <a
